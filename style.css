@@ -11,7 +11,7 @@ p {
 
 #calculator {
     display: grid;
-    background-color: #ff4468;
+    background-color: #000383;
     grid-template-columns: repeat(4, 80px);
     /*grid-template-rows: repeat(6, 100px);*/
     grid-template-areas:
@@ -19,7 +19,7 @@ p {
     ' b b b b ';
     margin: 0 auto;
     /*height: 750px;*/
-    width: 328px;
+    width: 321px;
     border-radius: 5px;
     border-color: black;
     border-style: solid;
@@ -27,34 +27,39 @@ p {
 }
 
 .button {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 35px;
     border-style: solid;
     text-align: center;
-    padding: 10px;
+    padding: 2px;
     background-color: #9ad9ff;
-    width: 50px;
-    height: 50px;
-    box-shadow: inset;
+    width: 70px;
+    height: 60px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 1px;
+    font-weight:bold;
 }
 
 .clearButton {
-    border-radius: 5px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
+    border-radius: 1px;
     border-style: solid;
     grid-area: b;
     text-align: center;
-    padding: 10px;
+    /*padding: 10px;*/
     background-color: #9ad9ff;
-    width: 290px;
+    width: 310px;
     height:40px;
     margin: 5px;
+    font-weight:bold;
 }
 
 #display {
     grid-area: a;
     border-style: solid;
     text-align: right;
-    padding: 10px;
+    padding: 9px;
     background-color: azure;
     width: 290px;
     height: 50px;
