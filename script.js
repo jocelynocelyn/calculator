@@ -4,10 +4,7 @@ const display = document.querySelector('#display');
 let btn1 = document.querySelector('#btn1');
 btn1.addEventListener('click', () => {
     let displayValue = 1;
-// const content = document.createElement('div');
-// content.classList.add('content');
-display.textContent = displayValue;
-// display.append(content);
+        display.textContent = displayValue;
 });
 
 let btn2 = document.querySelector('#btn2');
