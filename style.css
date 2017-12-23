@@ -1,0 +1,31 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 35px;
+}
+
+#calculator {
+    background-color: coral;
+    margin: 0 auto;
+    height: 750px;
+    width: 500px;
+    border-radius: 3px;
+
+}
+
+.button {
+    border-style: solid;
+    text-align: center;
+    padding: 10px;
+    background-color: azure;
+    width: 50px;
+    box-shadow: inset;
+    margin: 10px;
+}
+
+.clearButton {
+    border-style: solid;
+    text-align: center;
+    padding: 10px;
+    background-color: azure;
+    width: 120px;
+}
