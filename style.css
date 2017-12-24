@@ -24,6 +24,7 @@ p {
     border-color: black;
     border-style: solid;
     border-width: 6px;
+    /*box-shadow: 10px 10px #eeeeee;*/
 }
 
 .button {
@@ -39,6 +40,7 @@ p {
     border-radius: 1px;
     font-weight:bold;
 }
+
 
 .clearButton {
     font-family: 'Ubuntu Condensed', sans-serif;
