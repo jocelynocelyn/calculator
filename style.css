@@ -41,6 +41,33 @@ p {
     font-weight:bold;
 }
 
+.number {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 35px;
+    border-style: solid;
+    text-align: center;
+    padding: 2px;
+    background-color: #9ad9ff;
+    width: 70px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 1px;
+    font-weight:bold;
+}
+
+.operator {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 35px;
+    border-style: solid;
+    text-align: center;
+    padding: 2px;
+    background-color: #9ad9ff;
+    width: 70px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 1px;
+    font-weight:bold;
+}
 
 .clearButton {
     font-family: 'Ubuntu Condensed', sans-serif;

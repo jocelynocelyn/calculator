@@ -1,13 +1,45 @@
 const display = document.querySelector('#display');
 let displayValue = 0;
+let num1 = 0
+let num2 = 0
+let operation = '';
+let didOperate = false;
 
 function clearAll() {
         displayValue = 0;
         display.textContent = '';
+        didOperate = false;
+        num1 = 0;
+        num2 = 0;
 }
 
+let addBtn = document.getElementById('addBtn');
+addBtn.addEventListener('click', storeNumbers);
+
+let equals = document.getElementById('equals');
+equals.addEventListener('click', operate);
+
+function storeNumbers() {
+    if(didOperate === false) {
+        num1 = parseInt(displayValue);
+        operation = '+';
+        didOperate = true;
+        displayValue = '';
+    } else {
+        num2 = parseFloat(displayValue);
+
+    }
+    console.log({ num1, num2, operation, displayValue });
+
+}
+
+// function displayNumber() {
+//    let numberButtons = document.getElementsByClassName('number');
+//    numberButtons.addEventListener('click', )
+// }
+
 let clearBtn = document.querySelector('.clearButton');
-clearBtn.addEventListener('click', clearAll)
+clearBtn.addEventListener('click', clearAll);
 
     let btn0 = document.querySelector('#btn0');
 btn0.addEventListener('click', () => {
@@ -17,6 +49,7 @@ btn0.addEventListener('click', () => {
         displayValue = displayValue + "0";
     }
     display.textContent = displayValue;
+    console.log(displayValue);
 });
 
 let btn1 = document.querySelector('#btn1');
@@ -57,6 +90,7 @@ btn4.addEventListener('click', () => {
         displayValue = displayValue + "4";
     }
     display.textContent = displayValue;
+    console.log(displayValue);
 });
 
 let btn5 = document.querySelector('#btn5');
@@ -108,16 +142,20 @@ btn9.addEventListener('click', () => {
     }
     display.textContent = displayValue;
 });
-function operate(num1, operation, num2) {
-    if (operation = '+') {
-        return add(num1, num2);
-    } else if (operation = '-') {
-        return subtract(num1, num2);
-    } else if (operation = '/') {
-        return divide(num1, num2);
+
+
+
+
+function operate() {
+    if (operation === '+') {
+       displayValue = num1 + num2;
+       display.textContent = displayValue;
     } else {
-        return multiply(num1, num2);
+        displayValue = 'dogs';
     }
+
+    num1 = displayValue;
+    num2 = '';
 }
 
 function add(num1, num2) {
