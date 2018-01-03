@@ -5,20 +5,13 @@ let num2 = 0
 let operation = '';
 let didOperate = false;
 
-function clearAll() {
-        displayValue = 0;
-        display.textContent = '';
-        didOperate = false;
-        operation = '';
-        num1 = 0;
-        num2 = 0;
-}
+let clearBtn = document.querySelector('.clearButton');
+clearBtn.addEventListener('click', clearAll);
 
 let operator = document.getElementsByClassName('operator');
 for (let i = 0; i < operator.length; i++) {
     let operationButton = operator[i];
-    operationButton.addEventListener('click', storeNumbers);
-
+    operationButton.addEventListener('click', assignOperator);
 }
 
 let number = document.getElementsByClassName('number');
@@ -30,7 +23,7 @@ for (let j = 0; j < number.length; j++) {
 let equals = document.getElementById('equals');
 equals.addEventListener('click', operate);
 
-function storeNumbers() {
+function assignOperator() {
     if(didOperate === false) {
         num1 = parseInt(displayValue);
         if (this.innerHTML == '+') {
@@ -51,9 +44,6 @@ function storeNumbers() {
     console.log({ num1, num2, operation, displayValue });
 }
 
-let clearBtn = document.querySelector('.clearButton');
-clearBtn.addEventListener('click', clearAll);
-
 function displayNumber() {
     if (displayValue == 0){
         displayValue = this.innerHTML;
@@ -61,8 +51,8 @@ function displayNumber() {
         displayValue = displayValue + this.innerHTML;
     }
 
-    if (didOperate = true) {
-        num2 = displayValue;
+    if (didOperate == true) {
+        num2 = parseFloat(displayValue);
     }
     display.textContent = displayValue;
     console.log(displayValue);
@@ -80,5 +70,15 @@ function operate() {
     }
     display.textContent = displayValue;
     num1 = displayValue;
-    num2 = '';
+    num2 = 0;
+    didOperate = false;
+}
+
+function clearAll() {
+    displayValue = 0;
+    display.textContent = '';
+    didOperate = false;
+    operation = '';
+    num1 = 0;
+    num2 = 0;
 }
