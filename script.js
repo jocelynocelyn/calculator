@@ -23,9 +23,10 @@ for (let j = 0; j < number.length; j++) {
 let equals = document.getElementById('equals');
 equals.addEventListener('click', operate);
 
+
 function assignOperator() {
     if(didOperate === false) {
-        num1 = parseInt(displayValue);
+        num1 = parseFloat(displayValue);
         if (this.innerHTML == '+') {
             operation = '+';
         } else if (this.innerHTML == '-') {
@@ -39,6 +40,21 @@ function assignOperator() {
         displayValue = '';
     } else {
         num2 = parseFloat(displayValue);
+    }
+    if(num1 && num2 && operation) {
+        operate();
+        num1 = parseFloat(displayValue);
+        if (this.innerHTML == '+') {
+            operation = '+';
+        } else if (this.innerHTML == '-') {
+            operation = '-';
+        } else if (this.innerHTML == 'x') {
+            operation = '*';
+        } else {
+            operation = '/';
+        }
+        didOperate = true;
+        displayValue = '';
 
     }
     console.log({ num1, num2, operation, displayValue });
@@ -54,10 +70,14 @@ function displayNumber() {
     if (didOperate == true) {
         num2 = parseFloat(displayValue);
     }
-    display.textContent = displayValue;
-    console.log(displayValue);
-}
 
+    // if(displayValue.includes('.')) {
+    //
+    // }
+
+    display.textContent = displayValue;
+    console.log({ num1, num2, operation, displayValue });
+}
 function operate() {
     if (operation === '+') {
        displayValue = num1 + num2;
@@ -72,6 +92,9 @@ function operate() {
     num1 = displayValue;
     num2 = 0;
     didOperate = false;
+    operation = '';
+    console.log({ num1, num2, operation, displayValue });
+
 }
 
 function clearAll() {
